@@ -61,11 +61,10 @@ p {
     opacity: 0.9; /* Slight transparency */
 }
 
-/* Float image in article */
 .hero article img {
-    float: right; /* Floats the image to the right of the paragraph */
-    max-width: 50%; /* Ensure image doesn't take up too much space */
-    margin-left: 15px; /* Add margin for spacing */
+    float: right; 
+    max-width: 50%;
+    margin-left: 15px;
 }
 
 .hero article::after {
