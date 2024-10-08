@@ -7,13 +7,42 @@
     --heading-font: Roboto Slab 400,700 and Black
     --text-font: Roboto 400 and 700
 }
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
 body {
     font-family: var(--text-font);
     color: var(--text-color);
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+header {
+    display: grid;
+    grid-template-columns: auto 1fr auto; /* logo, title, nav */
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+#logo {
+    max-height: 50px; /* Adjust logo height */
+}
+nav {
+    display: flex;
+    justify-content: flex-end; /* Align nav items to the right */
+}
+nav ul {
+    list-style: none;
+    display: flex;
+}
+nav ul li {
+    margin-left: 20px; /* Spacing between nav items */
+}
+nav ul li a {
+    text-decoration: none;
+    color: #007bff; /* Link color */
 }
 h1 {
     font-style: var(--heading-font);
@@ -23,34 +52,27 @@ h1 {
     top: 20px;
     left: 20px;
 }
-
 h2{
     color: var(--secondary-color);
 }
-
 p {
     color: var(--text-color);
 }
 .social-links a {
     text-decoration: none;
 }
-
 .social-links a:hover {
     text-decoration: underline;
 }
-
-
 .hero {
     position: relative;
     overflow: hidden; /* Ensures elements don't overflow */
 }
-
 .hero img {
     display: block;
     width: 100%; 
     height: auto;
 }
-
 .hero article {
     position: absolute;
     bottom: 20px;
@@ -60,15 +82,59 @@ p {
     border-radius: 8px; /* Rounded corners for the article */
     opacity: 0.9; /* Slight transparency */
 }
-
 .hero article img {
     float: right; 
     max-width: 50%;
     margin-left: 15px;
 }
-
 .hero article::after {
     content: "";
     display: table;
     clear: both;
+}
+/* History Section */
+#history {
+    padding: 20px;
+    background-color: #e9ecef;
+}
+/* Adventures Section */
+#adventures {
+    padding: 20px;
+}
+.adventure-gallery {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: space-between; /* Space out images */
+}
+.adventure-gallery figure {
+    flex: 1 1 calc(20% - 10px); /* 5 images in a row, adjust as necessary */
+    margin: 5px; /* Margin between figures */
+}
+.adventure-gallery img {
+    width: 100%; /* Responsive images */
+    height: auto;
+}
+/* Footer Styles */
+footer {
+    display: flex; /* Use Flexbox for the footer */
+    justify-content: space-between; /* Space out content */
+    align-items: center; /* Center items vertically */
+    padding: 20px; /* Add padding for spacing */
+    background-color: lightgrey; /* Dark background color */
+    color: white; /* White text color */
+}
+.social-media {
+    display: flex; /* Use Flexbox for social media icons */
+}
+.social-media a {
+    margin-left: 15px; /* Spacing between icons */
+}
+.social-media img {
+    width: 20px; /* Set icon size */
+    height: auto; /* Maintain aspect ratio */
+}
+.footer p {
+    margin-right: 20px; /* Space between icons and text */
+    font-size: 0.9em; /* Smaller font size for the footer text */
+    color: white; /* Ensure text color contrasts with the background */
 }
