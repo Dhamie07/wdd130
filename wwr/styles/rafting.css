@@ -31,7 +31,7 @@ header {
 }
 nav {
     display: flex;
-    justify-content: flex-end; /* Align nav items to the right */
+    justify-content: flex-end;
 }
 nav ul {
     list-style: none;
@@ -111,7 +111,7 @@ p {
     margin: 5px; /* Margin between figures */
 }
 .adventure-gallery img {
-    width: 100%; /* Responsive images */
+    width: 100%; 
     height: auto;
 }
 /* Footer Styles */
@@ -120,7 +120,7 @@ footer {
     justify-content: space-between; /* Space out content */
     align-items: center; /* Center items vertically */
     padding: 20px; /* Add padding for spacing */
-    background-color: lightgrey; /* Dark background color */
+    background-color: lightgrey;
     color: white; /* White text color */
 }
 .social-media {
