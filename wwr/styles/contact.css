@@ -5,6 +5,10 @@
     --background-color: rgba(255, 255, 255, 0.8); /* Light background with opacity */
     --text-color: #343A40; /* Dark text color */
     --heading-font: Roboto Slab 400,700 and Black
+<<<<<<< HEAD
+=======
+    --text-font: 'Roboto', sans-serif;
+>>>>>>> 19176f132964a185e520a68720ca5112032730f2
 }
 * {
     margin: 0;
