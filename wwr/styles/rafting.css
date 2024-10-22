@@ -197,7 +197,11 @@ p {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
+.trip h1 {
+    margin-bottom: 20px; /* Adds space between the header and form */
+    font-size: 1.5rem; /* Adjusts the size of the header */
+    color: #333; /* Optional: Change the text color */
+  }
 .trip img {
     width: 100%;
     height: auto;
