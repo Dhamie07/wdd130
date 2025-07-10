@@ -5,6 +5,22 @@ main img{
     width: 150px;
     height: auto;
 }
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 1.5rem;
+    text-align: space-between;
+    display: flex;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+h1 {
+    color: #333;
+    text-align: left;
+}
 p{
     padding: 0;
 }
