@@ -1,0 +1,213 @@
+:root {
+    --primary-color: #1B3172; /* Dark Blue */
+    --secondary-color: #93A5C5; /* Light Blue */
+    --accent1-color: #333; /* Dark Gray */
+    --accent2-color: #1a73e8; /* Blue */
+    --background-color: #f4f4f4; /* Light Background */
+    --heading-font: "Georgia", serif; /* Heading Font - Added 'serif' fallback for robustness */
+    --body-font: "Roboto", sans-serif; /* Body Font */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Style the entire document body text content */
+body {
+    font-family: var(--body-font);
+    background-color: var(--background-color);
+    color: var(--accent1-color); /* Default text color, will be overridden where needed */
+}
+
+/* Limit the page width and center the content */
+header, main, footer {
+    width: 840px; /* Fixed width for the main content area */
+    margin: 0 auto; /* Center the main content area horizontally */
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    background-color: var(--secondary-color); /* Example background for header */
+    color: white;
+}
+
+header .logo img {
+    width: 150px; /* Adjust logo size */
+    height: auto;
+    margin-left: 16px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Heading styles */
+h1, h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color); /* Default heading color */
+}
+
+/* General spacing for common elements */
+nav, p, section, article {
+    margin: 16px;
+    padding: 8px;
+}
+
+/* Remove underlines from social media image links in the footer */
+.social-links a { /* Corrected selector based on your HTML's 'social links' class */
+    text-decoration: none;
+}
+
+/* Hero Section Styles (Container for image and overlaid content) */
+.hero {
+    position: relative; /* CRUCIAL: Establishes positioning context for its absolute children */
+    width: 100%;
+    /* Increased height to ensure all overlaid content (h1 + article) fits comfortably */
+    height: 700px; /* Adjust this value as needed to contain all text and image */
+    overflow: hidden; /* Hides content that overflows the hero container */
+    display: flex; /* Use flexbox to help center the image */
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Space below the hero section */
+}
+
+/* Hero image styling (to fill the hero container) */
+.hero > img { /* Target the direct img child of .hero */
+    display: block;
+    width: 100%;
+    height: 100%; /* Make image fill the height of the hero container */
+    object-fit: cover; /* Ensures the image covers the entire area without distortion */
+    z-index: 1; /* Ensure image is behind overlaid text */
+}
+
+/* Style the h1 heading (Kyvak Rafting Co.) using absolute positioning */
+.hero h1 { /* Targeting h1 specifically within .hero */
+    position: absolute; /* Positions the h1 absolutely within .hero */
+    top: 50px; /* Position from the top of the .hero div */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to truly center */
+    width: 90%; /* Control width of the title */
+    max-width: 700px; /* Limit max width */
+    padding: 16px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability */
+    color: white; /* White text for contrast */
+    font-size: 2.5em; /* Make the title prominent */
+    border-radius: 8px;
+    z-index: 10; /* Ensure it's above the image and article */
+}
+
+/* Style the article using absolute positioning to overlay the image */
+/* This now contains Purpose, Mission, and Motto */
+.hero article { /* Targeting article specifically within .hero */
+    position: absolute; /* Positions the article absolutely within .hero */
+    top: 180px; /* Adjusted top to place it below the h1. Fine-tune this. */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to truly center */
+    width: 90%; /* Control width of the article box */
+    max-width: 700px; /* Limit max width for readability over image */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+    color: white; /* Text color for the article content */
+    padding: 20px;
+    border-radius: 8px; /* Optional: rounded corners for the article box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: subtle shadow */
+    z-index: 5; /* Ensure it's above the image but below the main title */
+}
+
+/* Style headings and paragraphs within the overlaid article */
+.hero article h2,
+.hero article p {
+    color: white; /* Ensure text inside the overlaid article is white */
+    margin: 10px 0; /* Add some vertical spacing */
+}
+
+/* Style the img inside the article within the hero div */
+.hero article img {
+    float: right; /* Floats the image to the right within the article */
+    width: 150px; /* Specific width for the image */
+    height: auto; /* Maintain aspect ratio */
+    border: 2px solid var(--accent2-color); /* Border color using accent2-color */
+    border-radius: 8px; /* Rounded corners for the image */
+    margin: 0 0 10px 15px; /* Top, Right, Bottom, Left margin for spacing */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Box shadow for the image */
+}
+
+/* Clearfix for floated elements within the article to ensure content flows correctly */
+.hero article::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* History Section */
+section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Adventure Gallery Styling */
+.adventure-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.adventure-gallery figure {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.adventure-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.adventure-gallery figcaption {
+    margin-top: 8px;
+    font-style: italic;
+    color: var(--accent1-color);
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    margin-top: 20px; /* Space above footer */
+}
+
+footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between social icons */
+    margin-top: 10px;
+}
+
+footer .social-links img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+}
