@@ -8,48 +8,70 @@
     <meta name="author" content="Okpewo Damilola James">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet">
+    <!-- Make sure this path is correct for your CSS file -->
     <link rel="stylesheet" href="styles/styles.css">
-</head>
+  </head>
   <body>
     <header>
-      <div class="logo">
+      <div class="logo-box">
         <img src="images/splash.png" alt="Kyvak Rafting Co. Logo">
       </div>
       <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="trips.html">Trips</a>
-        <a href="contact.html">Contact Us</a>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="trips.html">Trips</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
       </nav>
     </header>
+
     <main>
-      <div class="hero">
-            <img src="images/rafting10_1024.webp" alt="Landscape image">
-            <h1>Kyvak Rafting Co.</h1>
-            <article>
-                <img src="images/happy-workers.webp" alt="Happy Employees">
-                <h2>Purpose</h2>
-                <p>To create an immersive and user-friendly online platform that showcases the thrill of whitewater
-                rafting, while providing a seamless experience for customers to plan and book their adventures.. The
-                main message is that rafting is a fun activity and to come and experience it for yourself and bring
-                your family.</p>
-                <h2>Mission</h2>
-                <p></p>To Awaken your Adventure Spirit
-                <h2> Motto</h2>
-                <p>"Chasing Waves, Finding Bliss"</p>
-            </article>
-        </div>
-      <section>
+      <!-- This is the revised hero section based on your request -->
+      <div class="hero-original">
+        <img src="images/rafting10_1024.webp" alt="Landscape image" class="hero-background-image">
+        <h1>Kyvak Rafting Co.</h1>
+        <article class="hero-article-content">
+          <img src="images/happy-workers.webp" alt="Happy Employees">
+          <h2>Purpose</h2>
+          <p>
+            To create an immersive and user-friendly online platform that
+            showcases the thrill of whitewater rafting, while providing a
+            seamless experience for customers to plan and book their adventures.
+            The main message is that rafting is a fun activity and to come and
+            experience it for yourself and bring your family.
+          </p>
+          <h2>Mission</h2>
+          <p>To Awaken your Adventure Spirit</p>
+          <h2>Motto</h2>
+          <p>"Chasing Waves, Finding Bliss"</p>
+        </article>
+      </div>
+
+      <!-- History Section - Remains the same as previous update -->
+      <section class="history-section">
         <h2>History</h2>
-        <p>
-          Founded in the Year 2024, by a group of three who loved Adventure
-          seeking and want to share their love to others.
-        </p>
+        <div class="history-content-grid">
+          <p class="history-paragraph">
+            Kyvak Rafting Co. began in 2024 as a dream shared by a group of adventurous friends. United by their deep love for the thrill of whitewater and the breathtaking beauty of the rivers, they often found themselves planning their next great escape.
+            It was during one such exhilarating trip, surrounded by laughter and the roar of rapids, that a simple idea sparked: "Why don't we share this incredible experience with others?" They envisioned a company that not only offered exciting rafting adventures but also fostered a sense of camaraderie and joy, where every trip felt like an outing with friends.
+          </p>
+          <div class="history-image-placeholder">
+            <img src="images/history.webp" alt="History Image">
+          </div>
+          <p class="history-paragraph">
+            Driven by this passion, they pooled their resources and expertise, transforming their shared love into Kyvak Rafting Co. Today, we continue that founding spirit, dedicated to awakening your adventure spirit and creating unforgettable memories on the water for families and friends alike.
+          </p>
+        </div>
       </section>
-      <section>
-        <h2>Adventure Awaits You!</h2>
-        <div class="adventure-gallery">
+
+      <!-- Adventure Awaits You Section - Remains the same as previous update -->
+      <section class="adventures-section">
+        <h2>Adventure Awaits You</h2>
+        <div class="adventures-grid">
           <figure>
             <img src="images/rafting65_600.webp" alt="Los Dientes del Diablo">
             <figcaption>"Los Dientes del Diablo"</figcaption>
@@ -73,9 +95,10 @@
         </div>
       </section>
     </main>
+
     <footer>
-      <p>©2024 Kyvak Rafting Co. 🏝 Okpewo Damilola James🏝</p>
-      <nav class="social-links">
+      <p>&copy;2024 Kyvak Rafting Co. 🏝 Okpewo Damilola James🏝</p>
+      <div class="social-links">
         <a href="https://facebook.com">
           <img src="images/5296499_fb_facebook.webp" alt="facebook icon">
         </a>
@@ -85,7 +108,7 @@
         <a href="https://instagram.com">
           <img src="images/6929237_instagram_icon.webp" alt="instagram icon">
         </a>
-      </nav>
+      </div>
     </footer>
   </body>
 </html>

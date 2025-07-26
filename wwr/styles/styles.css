@@ -1,213 +1,308 @@
 :root {
-    --primary-color: #1B3172; /* Dark Blue */
-    --secondary-color: #93A5C5; /* Light Blue */
-    --accent1-color: #333; /* Dark Gray */
-    --accent2-color: #1a73e8; /* Blue */
-    --background-color: #f4f4f4; /* Light Background */
-    --heading-font: "Georgia", serif; /* Heading Font - Added 'serif' fallback for robustness */
-    --body-font: "Roboto", sans-serif; /* Body Font */
+  --primary-color: #1b3172;
+  --secondary-color: #93a5c5;
+  --accent1-color: #333;
+  --accent2-color: #1a73e8;
+  --background-color: #f4f4f4;
+  --heading-font: "Georgia", serif;
+  --body-font: "Roboto", sans-serif;
 }
 
+/* Universal box-sizing for easier layout */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-/* Style the entire document body text content */
+
+/* General Body Styles */
 body {
-    font-family: var(--body-font);
-    background-color: var(--background-color);
-    color: var(--accent1-color); /* Default text color, will be overridden where needed */
+  font-family: var(--body-font);
+  background-color: var(--background-color);
+  color: var(--accent1-color);
+  line-height: 1.6;
 }
 
-/* Limit the page width and center the content */
-header, main, footer {
-    width: 840px; /* Fixed width for the main content area */
-    margin: 0 auto; /* Center the main content area horizontally */
-}
-
-/* Header Styling */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    background-color: var(--secondary-color); /* Example background for header */
-    color: white;
-}
-
-header .logo img {
-    width: 150px; /* Adjust logo size */
-    height: auto;
-    margin-left: 16px;
-}
-
-header nav a {
-    text-decoration: none;
-    color: white;
-    padding: 10px 15px;
-    transition: background-color 0.3s ease;
-}
-
-header nav a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
+/* Main content wrapper - wireframe implies a centered max-width layout */
+main {
+  max-width: 1000px; /* Adjusted max-width to give more space for content as per wireframe */
+  margin: 0 auto; /* Center the main content area horizontally */
+  padding: 20px; /* Add some padding around the main content */
 }
 
 /* Heading styles */
-h1, h2 {
-    font-family: var(--heading-font);
-    color: var(--primary-color); /* Default heading color */
+h1,
+h2 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  text-align: center; /* Most headings in wireframe are centered */
+  margin-bottom: 20px; /* Default margin below headings */
 }
 
-/* General spacing for common elements */
-nav, p, section, article {
-    margin: 16px;
-    padding: 8px;
+/* --- Header Styling (CSS Grid for header, CSS Flex for nav) --- */
+header {
+  display: grid;
+  /* Columns: 150px for logo, 1fr for navigation (fills remaining space) */
+  grid-template-columns: 150px 1fr;
+  align-items: center; /* Vertically align items in the grid */
+  padding: 10px 20px;
+  background-color: var(--secondary-color);
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* Added max-width and margin: auto to center header like main */
+  max-width: 1000px; /* Match main's max-width for consistency */
+  margin: 0 auto;
 }
 
-/* Remove underlines from social media image links in the footer */
-.social-links a { /* Corrected selector based on your HTML's 'social links' class */
-    text-decoration: none;
+.logo-box img {
+  width: 120px; /* Adjusted logo size */
+  height: auto;
+  margin-left: 0; /* Remove existing margin-left */
+  display: block; /* Ensures no extra space below image */
 }
 
-/* Hero Section Styles (Container for image and overlaid content) */
-.hero {
-    position: relative; /* CRUCIAL: Establishes positioning context for its absolute children */
-    width: 100%;
-    /* Increased height to ensure all overlaid content (h1 + article) fits comfortably */
-    height: 700px; /* Adjust this value as needed to contain all text and image */
-    overflow: hidden; /* Hides content that overflows the hero container */
-    display: flex; /* Use flexbox to help center the image */
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px; /* Space below the hero section */
+/* Navigation styles (CSS Flex for horizontal links) */
+nav ul {
+  list-style: none; /* Removes bullet points */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Enables Flexbox */
+  justify-content: flex-end; /* Aligns links to the right */
+  gap: 20px; /* Space between links */
 }
 
-/* Hero image styling (to fill the hero container) */
-.hero > img { /* Target the direct img child of .hero */
-    display: block;
-    width: 100%;
-    height: 100%; /* Make image fill the height of the hero container */
-    object-fit: cover; /* Ensures the image covers the entire area without distortion */
-    z-index: 1; /* Ensure image is behind overlaid text */
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap; /* Prevents links from wrapping onto multiple lines */
 }
 
-/* Style the h1 heading (Kyvak Rafting Co.) using absolute positioning */
-.hero h1 { /* Targeting h1 specifically within .hero */
-    position: absolute; /* Positions the h1 absolutely within .hero */
-    top: 50px; /* Position from the top of the .hero div */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust to truly center */
-    width: 90%; /* Control width of the title */
-    max-width: 700px; /* Limit max width */
-    padding: 16px;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability */
-    color: white; /* White text for contrast */
-    font-size: 2.5em; /* Make the title prominent */
-    border-radius: 8px;
-    z-index: 10; /* Ensure it's above the image and article */
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
 }
 
-/* Style the article using absolute positioning to overlay the image */
-/* This now contains Purpose, Mission, and Motto */
-.hero article { /* Targeting article specifically within .hero */
-    position: absolute; /* Positions the article absolutely within .hero */
-    top: 180px; /* Adjusted top to place it below the h1. Fine-tune this. */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust to truly center */
-    width: 90%; /* Control width of the article box */
-    max-width: 700px; /* Limit max width for readability over image */
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
-    color: white; /* Text color for the article content */
-    padding: 20px;
-    border-radius: 8px; /* Optional: rounded corners for the article box */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: subtle shadow */
-    z-index: 5; /* Ensure it's above the image but below the main title */
+/* --- Hero Original Section (with image, h1, and article overlay) --- */
+.hero-original {
+  position: relative;
+  width: 100%;
+  min-height: 600px; /* Use min-height to allow it to grow with content */
+  overflow: hidden; /* Hides content that overflows */
+  margin-top: 30px; /* Space from header */
+  border-radius: 8px; /* Rounded corners for the entire hero block */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  /* NEW: Use flexbox to position h1 and article */
+  display: flex;
+  flex-direction: column; /* Stack h1 and article vertically */
+  justify-content: center; /* Center them vertically within available space */
+  align-items: center; /* Center them horizontally */
+  padding-top: 50px; /* Add padding to prevent content from going under header */
+  padding-bottom: 50px; /* Add padding to the bottom to give space for content */
+}
+
+.hero-original .hero-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire area without distortion */
+  z-index: 1; /* Ensure image is behind overlaid text */
+}
+
+.hero-original h1 {
+  position: static; /* Remove absolute positioning, let flexbox handle it */
+  margin: 0 0 20px 0; /* Add margin for spacing between h1 and article */
+  transform: none; /* Remove transform */
+  font-size: 2.5em; /* Make the title prominent */
+  width: 90%;
+  max-width: 700px;
+  padding: 16px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border-radius: 8px;
+  z-index: 2; /* Ensure it's above the image */
+  white-space: nowrap; /* Prevent title from wrapping */
+  overflow: hidden; /* Hide overflow if nowrap causes issues */
+  text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+.hero-original .hero-article-content {
+  position: static; /* Remove absolute positioning, let flexbox handle it */
+  transform: none; /* Remove transform */
+  width: 90%;
+  max-width: 700px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 2; /* Ensure it's above the image */
+  max-height: none; /* Crucial: Allows article to expand fully */
+  overflow-y: visible; /* Crucial: Prevents internal scrollbar */
 }
 
 /* Style headings and paragraphs within the overlaid article */
-.hero article h2,
-.hero article p {
-    color: white; /* Ensure text inside the overlaid article is white */
-    margin: 10px 0; /* Add some vertical spacing */
+.hero-original .hero-article-content h2,
+.hero-original .hero-article-content p {
+  color: white; /* Ensure text inside the overlaid article is white */
+  margin: 10px 0; /* Add some vertical spacing */
+  text-align: left; /* Align text left within the article */
 }
 
 /* Style the img inside the article within the hero div */
-.hero article img {
-    float: right; /* Floats the image to the right within the article */
-    width: 150px; /* Specific width for the image */
-    height: auto; /* Maintain aspect ratio */
-    border: 2px solid var(--accent2-color); /* Border color using accent2-color */
-    border-radius: 8px; /* Rounded corners for the image */
-    margin: 0 0 10px 15px; /* Top, Right, Bottom, Left margin for spacing */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Box shadow for the image */
+.hero-original .hero-article-content img {
+  float: right; /* Floats the image to the right within the article */
+  width: 150px; /* Specific width for the image */
+  height: auto; /* Maintain aspect ratio */
+  border: 2px solid var(--accent2-color); /* Border color using accent2-color */
+  border-radius: 8px; /* Rounded corners for the image */
+  margin: 0 0 10px 15px; /* Top, Right, Bottom, Left margin for spacing */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Box shadow for the image */
 }
 
 /* Clearfix for floated elements within the article to ensure content flows correctly */
-.hero article::after {
-    content: "";
-    display: table;
-    clear: both;
+.hero-original .hero-article-content::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-/* History Section */
-section {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+/* --- History Section - Remains the same as previous update --- */
+.history-section {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
 }
 
-/* Adventure Gallery Styling */
-.adventure-gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    margin-top: 20px;
+.history-section h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
 }
 
-.adventure-gallery figure {
-    margin: 0;
-    text-align: center;
-    width: 100%;
-    max-width: 600px;
+.history-content-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* Text | Image | Text. auto for image to fit its content */
+  gap: 20px; /* Space between columns */
+  align-items: start; /* Align content to the top of each grid area */
 }
 
-.adventure-gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+.history-image-placeholder {
+  width: 150px; /* Fixed width for the image container */
+  height: 150px; /* Fixed height to make it square or desired ratio */
+  background-color: var(--primary-color); /* Background color for placeholder visual */
+  display: flex; /* Use flex to center the actual image/icon inside */
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Hide any overflow if image is larger */
 }
 
-.adventure-gallery figcaption {
-    margin-top: 8px;
-    font-style: italic;
-    color: var(--accent1-color);
+.history-image-placeholder img {
+  width: 100%; /* Image fills its container */
+  height: 100%; /* Image fills its container */
+  object-fit: cover; /* Ensures image covers, cropping if aspect ratio doesn't match */
+  display: block;
+  border-radius: 8px; /* Match parent container's border-radius */
 }
 
-/* Footer Styling */
+.history-paragraph {
+  margin: 0; /* Remove default paragraph margins */
+  padding: 0; /* Remove default paragraph padding */
+}
+
+/* --- Adventure Awaits You Section - Remains the same as previous update --- */
+.adventures-section {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.adventures-section h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.adventures-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* 5 columns, flexible */
+  gap: 15px; /* Spacing between images */
+  padding: 0; /* Remove padding if added previously, main handles it */
+  margin: 0; /* Remove margin if added previously */
+}
+
+.adventures-grid figure {
+  margin: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.adventures-grid img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.adventures-grid figcaption {
+  margin-top: 8px;
+  font-style: italic;
+  color: var(--accent1-color);
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 5px;
+}
+
+/* --- Footer Styling - Remains the same as previous update --- */
 footer {
-    text-align: center;
-    padding: 10px;
-    background-color: var(--primary-color);
-    color: white;
-    margin-top: 20px; /* Space above footer */
+  display: flex; /* Use flexbox for footer layout */
+  justify-content: space-between; /* Puts copyright left, social links right */
+  align-items: center; /* Vertically centers content */
+  padding: 20px;
+  margin-top: 50px; /* Space above footer */
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  /* Added max-width and margin: auto to center footer like main */
+  max-width: 1000px; /* Match main's max-width for consistency */
+  margin: 50px auto 0 auto; /* Top margin, auto horizontal, 0 bottom */
 }
 
-footer .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 15px; /* Space between social icons */
-    margin-top: 10px;
+footer p {
+  margin: 0;
+  font-size: 0.9em;
+  white-space: nowrap; /* Prevent copyright text from wrapping */
 }
 
-footer .social-links img {
-    width: 20px;
-    height: 20px;
-    filter: invert(1);
+.social-links {
+  display: flex; /* Flex for social icons */
+  gap: 15px; /* Space between icons */
+}
+
+.social-links img {
+  width: 30px; /* Size of social icons */
+  height: 30px;
+  filter: invert(1); /* Makes icons white if they are dark */
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-links img:hover {
+  transform: scale(1.1);
 }
