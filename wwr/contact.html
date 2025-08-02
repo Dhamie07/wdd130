@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Water Rafting - Contact Us</title>
+    <meta name="description" content="How to contact us for your rafting adventures">
+    <meta name="author" content="Okpewo Damilola James">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet">
+    <!-- Make sure this path is correct for your CSS file -->
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/contact.css">
+  </head>
+  <body>
+    <header>
+      <div class="logo-box">
+        <img src="images/splash.png" alt="Kyvak Rafting Co. Logo">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="trips.html">Trips</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="contact-info">
+            <h1>Contact Us</h1>
+            <h2>Our Information</h2>
+            <p><strong>Address:</strong> 123 Riverbend Road, Raftville, USA</p>
+            <p><strong>Phone:</strong> (555) 123-4567</p>
+            <p><strong>Email:</strong> info@whitewaterrafting.com</p>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12000.0000!2d-111.9750!3d33.4342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDQzJzM0LjkiTiAxMTHCsDU4JzU3LjkiVw!5e0!3m2!1sen!2sus!4v1625078400000!5m2!1sen!2sus"
+                        allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <section class="employee-profiles">
+            <h2>Meet Our Team</h2>
+            <div class="profiles-container">
+                <figure>
+                    <img src="images/employee.webp" alt="Smiling employee Jane Smith">
+                    <figcaption>Jane Smith - Lead Guide</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/employee2.webp" alt="Smiling employee Damian Walter">
+                    <figcaption>Damian Walter - Reservation Specialist</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/employee3.webp" alt="Smiling employee Samantha Jackson">
+                    <figcaption>Samantha Jackson - Customer Service Manager</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="contact-form-section">
+            <h2>Ask a Question</h2>
+            <form action="submit_form.php" method="post" class="contact-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="user_name" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="user_email" required>
+
+                <label>Purpose of Message:</label>
+                <div class="radio-group">
+                    <input type="radio" id="general" name="message_purpose" value="General Inquiry" checked>
+                    <label for="general">General Inquiry</label>
+                    <br>
+                    <input type="radio" id="reservation" name="message_purpose" value="Reservation Question">
+                    <label for="reservation">Reservation Question</label>
+                    <br>
+                    <input type="radio" id="website" name="message_purpose" value="Website Suggestion">
+                    <label for="website">Website Suggestion</label>
+                </div>
+
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="user_message" rows="4" required></textarea>
+
+                <div class="newsletter-checkbox">
+                    <input type="checkbox" id="newsletter" name="newsletter_subscribe">
+                    <label for="newsletter">Please subscribe me to the monthly newsletter</label>
+                </div>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+      <p>&copy;2024 Kyvak Rafting Co. 🏝 Okpewo Damilola James🏝</p>
+      <div class="social-links">
+        <a href="https://facebook.com">
+          <img src="images/facebook.webp" alt="facebook icon">
+        </a>
+        <a href="https://x.com">
+          <img src="images/x_twitter.webp" alt="x (twitter)">
+        </a>
+        <a href="https://instagram.com">
+          <img src="images/instagram_icon.webp" alt="instagram icon">
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>
